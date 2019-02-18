@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>测试接口</title>
+</head>
+<body>
+
+    <table width=300>
+        <tr>
+            <th>姓名: </th>
+            <th>教育: </th>
+            <th>年龄: </th>
+        </tr>
+        %{if condition="empty($Student)"}%
+            <tr>
+                <td>#没有#</td>
+                <td>#啥都没有#</td>
+            </tr>
+        %{else /}%
+            %{foreach $Student as $vo}%
+            <tr>
+                <td>#{$vo.name}#</td>
+                <td>#{$vo.class}#</td>
+                <td>#{$vo.age}#</td>
+            </tr>
+            %{/foreach}%
+        %{/if}%
+            
+    </table>
+    <script>
+        window.onload = function () {
+            // axios.get('/user?ID=12345')
+            // .then(function (response) {
+            //     console.log(response);
+            // })
+        }
+    </script>
+    
+</body>
+</html>
